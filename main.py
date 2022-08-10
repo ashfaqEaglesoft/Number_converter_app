@@ -1,3 +1,4 @@
+from cgitb import text
 from email.mime import image
 from kivymd.uix.screen import MDScreen
 from kivymd.app import MDApp
@@ -86,10 +87,17 @@ class ConverterApp(MDApp):
         screen.add_widget(MDFillRoundFlatButton(
             text="Convert",
             font_size=17,
-            pos_hint={"center_x":0.5,"center_y":0.15},
+            pos_hint={"center_x":0.5,"center_y":0.20},
             on_press=self.convert
         ))
-
+        # add copyright label 
+        self.copyrightlabel=MDLabel(
+            text="Eaglesoft.com.pk",
+            halign="center",
+            pos_hint={"center_x":0.5,"center_y":0.10},
+            font_size=22,
+        )
+        screen.add_widget(self.copyrightlabel)
 
         
         return screen
